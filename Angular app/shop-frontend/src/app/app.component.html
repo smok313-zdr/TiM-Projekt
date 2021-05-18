@@ -1,0 +1,41 @@
+<body>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a routerLink="shop" routerLinkActive="active" class="nav-link">Shop</a>
+    </li>
+    <li class="nav-item">
+        <a *ngIf="loginService.isUserLoggedIn()" routerLink="products" routerLinkActive="active" class="nav-link">List of products</a>
+    </li>
+    <li class="nav-item">
+        <a *ngIf="loginService.isUserLoggedIn()" routerLink="create-product" routerLinkActive="active" class="nav-link">Add product</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="about" routerLinkActive="active" class="nav-link">About Us</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="contact" routerLinkActive="active" class="nav-link">Contact</a>
+    </li>
+    <li class="nav-item">
+        <a *ngIf="!loginService.isUserLoggedIn()" routerLink="login" routerLinkActive="active" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item">
+        <a *ngIf="loginService.isUserLoggedIn()" routerLink="logout" routerLinkActive="active" class="nav-link">Logout</a>
+    </li>
+</ul>
+<p style="margin-left: 92%; font-family: 'Roboto', sans-serif; color: white; 
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);">{{today | date}}</p> 
+</nav>
+
+<img class="center" src="assets/img/logo2.png">
+<div class="container">
+<router-outlet></router-outlet> 
+</div>
+
+<footer>
+    <span>Copyright © 2021, Kacper Zdrojewski. All Rights Reserved.</span>
+</footer>
+</body>

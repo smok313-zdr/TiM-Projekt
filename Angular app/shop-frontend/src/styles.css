@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body{ height:100vh; margin:0; }
+footer{ min-height:40px; background-color: blue;
+  text-align: center;
+  color: white; }
+
+  body{ 
+    display:flex; 
+    flex-direction:column; 
+    overflow-y: overlay;
+  }
+  
+  footer{
+    margin-top:auto; 
+  }
+
+.center {
+    display: block;
+    min-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+  }
+
+  .partner {
+    width: 150px;
+    height: 100px;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 25px;
+  }

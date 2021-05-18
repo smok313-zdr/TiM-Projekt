@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Contact Us</h2> 
+
+    <div class="godziny">
+        <b>We will be open:</b><br><br>
+        <table style="width: 150%;">
+        <tr><td>Monday</td> <td>07:00-15:00</td></tr>
+        <tr><td>Tuesday</td> <td>07:00-15:00</td></tr>
+        <tr><td>Wednesday</td> <td>07:00-15:00</td></tr>
+        <tr><td>Thursday</td> <td>07:00-15:00</td></tr>
+        <tr><td>Friday</td> <td>07:00-15:00</td></tr>
+        <tr><td>Saturday</td> <td>09:00-13:00</td></tr>
+        <tr><td>Sunday</td> <td>09:00-13:00</td></tr>
+      </table>
+        </div>
+
+    <form class="contact" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Name:</mat-label>
+          <input style="width: 250px;" matInput [formControl]="name" required>
+          <mat-error style="color: red;" *ngIf="name.invalid">Please enter your name</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email:</mat-label>
+          <input style="width: 250px;" matInput [formControl]="email" placeholder="email@example.com" required>
+          <mat-error style="color: red;" *ngIf="email.invalid">Please enter a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Message:</mat-label>
+          <textarea style="width: 250px;" matInput [formControl]="message" maxlength="256" placeholder="I'm interested in..." required></textarea>
+          <mat-hint align="end"> {{message.value?.length || 0}}/256</mat-hint> <br>
+          <mat-error style="color: red;" *ngIf="message.invalid">Please enter a message</mat-error>
+        </mat-form-field>
+        <button [disabled]="isLoading" class="submit" type="submit">Submit</button>
+        <input [formControl]="honeypot" class="hidden" type="text" />
+        <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+          <span>{{responseMessage}}</span>
+        </div>
+      </form>
+
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+    *Click OK
+  </div>
