@@ -8,5 +8,6 @@ public class Main {
 
         System.out.println("Tdizałaj kurwa");
         System.out.println("Działa");
+        System.out.println("nanana");
     }
 }
