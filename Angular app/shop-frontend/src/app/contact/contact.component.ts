@@ -44,9 +44,9 @@ export class ContactComponent implements OnInit {
     if (this.form.status == "VALID" && this.honeypot.value == "") {
       this.form.disable(); // disable the form if it's valid to disable multiple submissions
       var formData: any = new FormData();
-      formData.append("name", this.form.get("name").value);
-      formData.append("email", this.form.get("email").value);
-      formData.append("message", this.form.get("message").value);
+      formData.append("name", this.form.get("name")!.value);
+      formData.append("email", this.form.get("email")!.value);
+      formData.append("message", this.form.get("message")!.value);
       this.isLoading = true; // sending the post request async so it's in progress
       this.submitted = false; // hide the response message on multiple submits
       this.http.post("https://script.google.com/macros/s/AKfycbxOj04y9oa1xD6CurEsPOTNc19mfnqQAAo2aQVk/exec", formData).subscribe(
