@@ -68,7 +68,8 @@ class ListActivity : AppCompatActivity() {
                             it.id,
                             it.nameOfProduct,
                             it.price,
-                            it.amountToBuy
+                            it.amountToBuy,
+                            it.picture
                         ) }
                     }
                     startActivity(intent)

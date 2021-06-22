@@ -36,7 +36,7 @@ class CheckoutActivity : AppCompatActivity() {
         sumTextView.text = "Sum: "+checkoutViewModel.sum.toString()+" USD"
 
         basketRecyclerView.layoutManager = LinearLayoutManager(this)
-        basketRecyclerView.adapter = CheckoutRecyclerAdapter(productList.toList())
+        basketRecyclerView.adapter = CheckoutRecyclerAdapter(productList.toList(),checkoutViewModel,this@CheckoutActivity)
 
         var url: MutableLiveData<String> = MutableLiveData()
         buyButton.setOnClickListener {

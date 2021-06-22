@@ -6,5 +6,6 @@ data class BasketProduct(
     val id: String,
     val nameOfProduct: String,
     val price: Int,
-    val amount: Int
+    val amount: Int,
+    val picture: String
 )
