@@ -13,5 +13,6 @@ public class ProductRequest {
     private Integer amount;
     private String picture;
     private String nameOfProduct;
+    private String url;
 
 }

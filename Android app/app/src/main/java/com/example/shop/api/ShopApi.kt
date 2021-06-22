@@ -4,10 +4,7 @@ import com.example.shop.data.dtos.request.AddUserRequest
 import com.example.shop.data.dtos.request.CreateAccountRequest
 import com.example.shop.data.dtos.request.LoginRequest
 import com.example.shop.data.dtos.request.ProductRequest
-import com.example.shop.data.dtos.response.JwtResponse
-import com.example.shop.data.dtos.response.MakePaymentResponse
-import com.example.shop.data.dtos.response.MessageResponse
-import com.example.shop.data.dtos.response.ProductResponse
+import com.example.shop.data.dtos.response.*
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -44,5 +41,8 @@ interface ShopApi {
 
     @POST("api/user/add_user")
     suspend fun addUser(@Body createAccountRequest: AddUserRequest): Response<MessageResponse>
+
+    @GET("api/user/{id}")
+    suspend fun addUser(@Path("id") id:String,  @Header("Authorization") authHeader:String): Response<UserResponse>
 
 }

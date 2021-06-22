@@ -12,4 +12,5 @@
     <string name="login_failed">"Login failed"</string>
     <string name="checkout">Checkout</string>
     <string name="refresh">Refresh</string>
+    <string name="add_product">Add product</string>
 </resources>

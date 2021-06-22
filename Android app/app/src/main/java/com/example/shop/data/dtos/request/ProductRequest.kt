@@ -9,5 +9,7 @@ data class ProductRequest (
     val price: Int,
     val amount: Int,
     val picture: String,
-    val nameOfProduct: String
+    val nameOfProduct: String,
+    val url: String
+
 )

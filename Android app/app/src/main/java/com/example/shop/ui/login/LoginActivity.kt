@@ -61,9 +61,12 @@ class LoginActivity : AppCompatActivity() {
             if (loginResult.isSuccessful) {
                 loginResult.body()?.username?.let { it1 -> updateUiWithUser(it1) }
                 setResult(Activity.RESULT_OK)
+                Log.d(TAG, loginViewModel.loginResult.value?.body().toString())
 
                 val intent = Intent(this, ListActivity::class.java).apply {
                     putExtra("Token", loginViewModel.loginResult.value?.body()?.token)
+                    putExtra("IsAdmin",loginViewModel.loginResult.value?.body()?.roles?.contains("ROLE_ADMIN")
+                    )
                 }
                 startActivity(intent)
 //                finish()

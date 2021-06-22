@@ -4,10 +4,7 @@ import com.example.shop.data.dtos.request.AddUserRequest
 import com.example.shop.data.dtos.request.CreateAccountRequest
 import com.example.shop.data.dtos.request.LoginRequest
 import com.example.shop.data.dtos.request.ProductRequest
-import com.example.shop.data.dtos.response.JwtResponse
-import com.example.shop.data.dtos.response.MakePaymentResponse
-import com.example.shop.data.dtos.response.MessageResponse
-import com.example.shop.data.dtos.response.ProductResponse
+import com.example.shop.data.dtos.response.*
 import retrofit2.Response
 
 class ShopRepository(token:String?) {
@@ -57,6 +54,10 @@ class ShopRepository(token:String?) {
 
     suspend fun addNewUser(userRequest: AddUserRequest): Response<MessageResponse> {
         return RetrofitInstance.api.addUser(userRequest)
+    }
+
+    suspend fun getUser(id:String): Response<UserResponse> {
+        return RetrofitInstance.api.addUser(id,jwt)
     }
 
 
