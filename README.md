@@ -1,2 +1,6 @@
-# TiM-Projekt
-Projekt na potrzeby przedmiotu Technologie internetowe i mobilne. Sklep IT.
+# IT shop project
+IT online store project created for the subject "Internet and mobile technologies".
+
+Backend: Spring boot
+Frontend: Angular
+Mobile: Kotlin
